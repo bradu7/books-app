@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "email": "a@a.com",
+      "password": "$2a$10$gcC3pe5u93DmNx1z/JS45eiiYp0oLIKAvICOgU66qmX48Lh0OR6xa",
+      "firstName": "Radu",
+      "lastName": "Badiu",
+      "id": 1
+    },
+    {
+      "email": "p@p.com",
+      "password": "$2a$10$bN2aHTng90CFf/joD8XUguGIqikMaziHMUKBZhJd27nN7y7sXH3W2",
+      "firstName": "Radu",
+      "lastName": "Badiu",
+      "id": 2
+    }
+    
+  ],
+  "books": [
+    {
+      "id": 2,
+      "book_image": "https://storage.googleapis.com/du-prd/books/images/9781982154912.jpg"
+    }
+  ]
+}
