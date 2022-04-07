@@ -247,3 +247,6 @@ input:active {
   border: none;
 }
 
+.favorites {
+  padding-right: 25px;
+}

@@ -21,6 +21,7 @@ export function AuthContextProvider({ children }) {
     setToken(accessToken);
     localStorage.setItem(userKey, JSON.stringify(user));
     localStorage.setItem(tokenKey, JSON.stringify(accessToken));
+    localStorage.setItem("favorites", JSON.stringify([]));
   }
 
   function logout() {

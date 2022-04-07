@@ -11,6 +11,11 @@ export function Nav() {
             Home
           </CustomNavLink>
         </li>
+        {/* <li className='favorites'>
+          <CustomNavLink to="/favorites">
+            Favorites
+          </CustomNavLink>
+        </li> */}
 
         {user && (
           <li className='welcome'>
