@@ -23,7 +23,7 @@ function Bestsellers() {
     getBestsellers();
   }, []);
 
-  const [books, setBooks] = useState(null);
+  const [books, setBooks] = useState([]);
 
   // useEffect(() => {
   //   async function getBooks() {
@@ -56,26 +56,28 @@ function Bestsellers() {
       `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=LHG23bHHYfmAHmUDXvELvAW42S3TJtlz`
     );
     const data = await api.json();
-    console.log(data.results.books);
+    // console.log(data.results.books);
     setBooks(data.results.books);
   };
 
-
-
   function addToBooks(e) {
+    // console.log(e);
     e.preventDefault();
-    const favorites = JSON.parse(localStorage.getItem("favorites"));
-    console.log(favorites);
-    let findBooks = books.find(elem => elem.isbn === e.target.value);
-    favorites.push(findBooks);
-   
-    // localStorage []
-    favorites.push(e.target.value);
-    console.log(favorites);
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-  }
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    // console.log(favorites);
+    // console.log(e.target.value);
+    let findBooks = books.find(
+      (elem) => elem.primary_isbn10 === e.target.value
+    );
+    const already = favorites.find(
+      (elem) => elem.primary_isbn10 === e.target.value
+    );
 
-  
+    if (!already) {
+      favorites.push(findBooks);
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    }
+  }
 
   return (
     <>

@@ -1,15 +1,13 @@
-import { useAuthContext } from '../features/Auth.context';
-import { CustomNavLink } from './CustomNavLink';
+import { useAuthContext } from "../features/Auth.context";
+import { CustomNavLink } from "./CustomNavLink";
 
 export function Nav() {
   const { user, logout } = useAuthContext();
   return (
-    <nav className='navi'>
+    <nav className="navi">
       <ul>
-        <li className='home'>
-          <CustomNavLink to="/">
-            Home
-          </CustomNavLink>
+        <li className="home">
+          <CustomNavLink to="/">Home</CustomNavLink>
         </li>
         {/* <li className='favorites'>
           <CustomNavLink to="/favorites">
@@ -18,9 +16,10 @@ export function Nav() {
         </li> */}
 
         {user && (
-          <li className='welcome'>
+          <li className="welcome">
             Welcome, <strong>{user.firstName}! </strong>
-            <a className='logout'
+            <a
+              className="logout"
               href="/"
               onClick={(e) => {
                 e.preventDefault();
@@ -31,15 +30,16 @@ export function Nav() {
             </a>
           </li>
         )}
+        <li className="favoritesNav">
+          <CustomNavLink to="/favorites">Favorites</CustomNavLink>
+        </li>
         {!user && (
           <>
-            <li className='loginNav' >
+            <li className="loginNav">
               <CustomNavLink to="/login">Login</CustomNavLink>
             </li>
-            <li className='registerNav'>
-              <CustomNavLink to="/register">
-                Register
-              </CustomNavLink>
+            <li className="registerNav">
+              <CustomNavLink to="/register">Register</CustomNavLink>
             </li>
           </>
         )}

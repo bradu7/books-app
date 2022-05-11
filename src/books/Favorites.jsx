@@ -1,19 +1,26 @@
-import React, { useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Bestsellers from "../components/Bestsellers";
 import { GlobalProvider } from "../context/Global";
-import { BookAdd } from "./BooksAdd";
+// import { BookAdd } from "./BooksAdd";
+import { Favorite } from "./Favorite";
 
-function Favorites() {
+export function Favorites() {
   // const { favorites } = useContext(GlobalContext);
-  const favorites = JSON.parse(localStorage.getItem("favorites"))
+  // const favorites = JSON.parse(localStorage.getItem("favorites"));
+  const [fav, setFav] = useState("");
+
+  useEffect(() => {
+    const favorites = JSON.parse(localStorage.getItem("favorites"));
+    setFav(favorites);
+  }, []);
   return (
     <div>
-      <h1>Favorites</h1>
+      <h1 className="favoritesMenu">Favorites</h1>
 
-      {favorites.length > 0 ? (
+      {fav?.length > 0 ? (
         <div>
-          {favorites.map((book) => (
-            <Bestsellers book={book} type="favorites" />
+          {fav?.map((book, index) => (
+            <Favorite key={index} book={book} />
           ))}
         </div>
       ) : (
@@ -23,4 +30,4 @@ function Favorites() {
   );
 }
 
-export default Favorites;
+// export default Favorites;
