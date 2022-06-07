@@ -4,10 +4,10 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Detailed from "../components/Detailed";
 import { Auth } from "../features/Auth";
 import { AuthContextProvider, useAuthContext } from "../features/Auth.context";
-import { BookEdit } from "../books/BookEdit";
+// import { BookEdit } from "../books/BookEdit";
 import { BookDetails } from "../books/BookDelete";
 import { AuthGuard } from "../components/AuthGuard";
-import { BookAdd } from "../books/BooksAdd";
+// import { BookAdd } from "../books/BooksAdd";
 import { Favorites } from "../books/Favorites";
 import { GlobalProvider } from "../context/Global";
 

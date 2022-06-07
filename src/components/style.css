@@ -122,6 +122,7 @@ padding-left: 30px;
 .logout {
   color: #bc6c25;
   padding-left: 10px;
+  padding-right: 10px;
 }
 
 .home {
@@ -197,6 +198,7 @@ font-weight: 500;
 
 .welcome {
   /* color: black; */
+  margin-left: 10px;
   
 }
 
